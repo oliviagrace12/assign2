@@ -50,7 +50,7 @@ void		tryNextCombination
     break;
   }
 
-  printf("%s \"Okay, let's %d-%d-%d.\"\n",NAME,count0,count1,count2);
+  printf("%s \"Okay, let's try %d-%d-%d.\"\n",NAME,count0,count1,count2);
   //  YOUR CODE HERE to send SIG_TRY_NEXT_DIGIT to safePid
   kill(safePid, SIG_TRY_NEXT_DIGIT);
   //  done

@@ -52,18 +52,19 @@ void		sigChildHandler	(int	sigInt
 int		main		()
 {
   int			time;
-  struct sigaction	act;
+  struct sigaction	alarmAction;
+  struct sigaction      childAction;
 
   //  YOUR CODE HERE
   //  Install sigAlarmHandler() as the SIGALRM handler
-  memset(&act,'\0',sizeof(act));
-  act.sa_handler = sigAlarmHandler;
-  sigaction(SIGALRM,&act,NULL);
+  memset(&alarmAction,'\0',sizeof(alarmAction));
+  alarmAction.sa_handler = sigAlarmHandler;
+  sigaction(SIGALRM,&alarmAction,NULL);
   // done
   //  Install sigChildHandler() as the SIGCHLD handler
-  memset(&act,'\0',sizeof(act));
-  act.sa_handler = sigChildHandler;
-  sigaction(SIGCHLD,&act,NULL);
+  memset(&childAction,'\0',sizeof(childAction));
+  childAction.sa_handler = sigChildHandler;
+  sigaction(SIGCHLD,&childAction,NULL);
   // done
   safePid	= fork(); 
 
