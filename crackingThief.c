@@ -13,15 +13,10 @@
 #include	"safeBustersHeaders.h"
 
 #define		NAME		"Cracking Thief"
-
 int		shouldStillRun	= 1;
-
 int		numDigitsFound	= 0;
-
 int		count0		= 0;
-
 int		count1		= 0;
-
 int		count2		= 0;
 
 pid_t		safePid;
@@ -123,7 +118,7 @@ int		main		(int		argc,
 
   while  (shouldStillRun)
   {
-    sleep(1);
+    sleep(5);
   }
 
   return(EXIT_SUCCESS);

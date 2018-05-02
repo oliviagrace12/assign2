@@ -19,8 +19,8 @@ int		isCoastClear	= 1;
 int		haveTheGoods	= 0;
 pid_t		safePid;
 pid_t		crackingThiefPid;
-char*		safe		= "../safe";
-char*		crackingThief   = "../crackingThief";
+char*		safe		= "./safe";
+char*		crackingThief   = "./crackingThief";
 
 void		sigAlarmHandler	(int	sigInt
 				)
@@ -105,6 +105,10 @@ int		main		()
   }
 
   //  YOUR CODE HERE to wait for both child processes
+  int status;
+  wait(&status);
+  wait(&status);
+  // done 
   printf("(bye)\n");
   return(EXIT_SUCCESS);
 }
