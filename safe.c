@@ -62,7 +62,7 @@ int main(int argc, char* argv[]) {
   printf("Safe \"Don't tell, but my combination is %d-%d-%d\"\n", comboOne, comboTwo, comboThree);
   
   while (shouldStillRun) {
-    sleep(5);
+    sleep(1);
   }
 
   if (safeIsOpened) {

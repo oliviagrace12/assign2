@@ -92,9 +92,12 @@ int		main		(int		argc,
 
   //  YOUR CODE HERE to set safePid to the integer in the string in the command line argument
   safePid = strtol(*argv, NULL, 10);
+  printf("Found safePid: %d\n", safePid);
   //  done  
   
   struct sigaction	act;
+  struct sigaction      wrongAct;
+  struct sigaction      rightAct;
 
   //  YOUR CODE HERE to install sigIntHandler for SIG_QUIT
   memset(&act,'\0',sizeof(act));
@@ -103,17 +106,18 @@ int		main		(int		argc,
   //  done
 
   //  YOUR CODE HERE to install sigWrongDigitHandler for SIG_WRONG_DIGIT
-  memset(&act,'\0',sizeof(act));
-  act.sa_handler = sigWrongDigitHandler;
-  sigaction(SIG_WRONG_DIGIT,&act,NULL);  
+  memset(&wrongAct,'\0',sizeof(wrongAct));
+  wrongAct.sa_handler = sigWrongDigitHandler;
+  sigaction(SIG_WRONG_DIGIT,&wrongAct,NULL);  
   //  done
 
   //  YOUR CODE HERE to install sigRightDigitHandler for SIG_RIGHT_DIGIT
-  memset(&act,'\0',sizeof(act));
-  act.sa_handler = sigRightDigitHandler;
-  sigaction(SIG_RIGHT_DIGIT,&act,NULL);
+  memset(&rightAct,'\0',sizeof(rightAct));
+  rightAct.sa_handler = sigRightDigitHandler;
+  sigaction(SIG_RIGHT_DIGIT,&rightAct,NULL);
   //  done
 
+  printf("Trying next combination");
   tryNextCombination();
 
   while  (shouldStillRun)
