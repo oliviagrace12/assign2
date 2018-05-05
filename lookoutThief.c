@@ -28,8 +28,8 @@ void		sigAlarmHandler	(int	sigInt
   printf("Watching thief \"Forget the safe!  We gotta go!\"\n");
   isCoastClear	= 0;
   //  YOUR CODE HERE to send SIG_QUIT to both safePid and crackingThiefPid
-  kill(safePid, SIGQUIT);
-  kill(crackingThiefPid, SIGQUIT);
+  kill(safePid, SIG_QUIT);
+  kill(crackingThiefPid, SIG_QUIT);
   // done
 }
 
@@ -44,7 +44,7 @@ void		sigChildHandler	(int	sigInt
   }
 
   //  YOUR CODE HERE to send SIG_QUIT to safePid
-  kill(safePid, SIGQUIT);
+  kill(safePid, SIG_QUIT);
   // done
 }
 

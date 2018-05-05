@@ -52,6 +52,7 @@ int main(int argc, char* argv[]) {
 
   struct sigaction advanced;
   memset(&advanced, '\0', sizeof(advanced));
+  advanced.sa_flags = SA_SIGINFO;
   advanced.sa_sigaction = advancedHandle;
   sigaction(SIG_TRY_NEXT_DIGIT, &advanced, NULL);
   
