@@ -67,6 +67,7 @@ int		main		()
   sigaction(SIGCHLD,&childAction,NULL);
   // done
   safePid	= fork(); 
+ // printf("safePid: %d\n", safePid);
 
   if  (safePid == 0)
   {
@@ -85,6 +86,7 @@ int		main		()
     char	pidText[TEXT_LEN];
 
     snprintf(pidText,TEXT_LEN,"%d",safePid);
+ //   printf("pidText: %d\n", pidText);
     //  YOUR CODE HERE to start crackingThief with pidText as a command line argument
     execl(crackingThief,crackingThief,pidText,NULL);
     // done
@@ -98,6 +100,7 @@ int		main		()
   // done
   for  (time = 0;  isCoastClear && !haveTheGoods;  time++)
   {
+   // printf("time: %d\n", time);
     if  ( (time % NUM_SECS_BETWEEN_HURRY_UPS) == 0 )
       printf("Watching thief \"Hurry it up!\"\n");
 

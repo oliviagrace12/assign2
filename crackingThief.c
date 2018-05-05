@@ -89,10 +89,10 @@ int		main		(int		argc,
     exit(EXIT_FAILURE);
   }
   //  done
-
+//  printf("input text: %s, %s\n", argv[0], argv[1]);
   //  YOUR CODE HERE to set safePid to the integer in the string in the command line argument
-  safePid = strtol(*argv, NULL, 10);
-  printf("Found safePid: %d\n", safePid);
+  safePid = strtol(argv[1], NULL, 10);
+//  printf("Found safePid: %d\n", safePid);
   //  done  
   
   struct sigaction	act;
